@@ -1,0 +1,23 @@
+もろもろ環境整備
+=========================================
+
+-----------------------------------------
+Chromeのインストール
+-----------------------------------------
+
+.. code-block:: bash
+
+ sudo vi /etc/yum.repos.d/google-chrome.repo
+
+.. code-block:: bash
+
+ [google-chrome]
+ name=google-chrome
+ baseurl=http://dl.google.com/linux/chrome/rpm/stable/$basearch
+ enabled=0
+ gpgcheck=1
+ gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+
+.. code-block:: bash
+
+ sudo yum install --enablerepo=google-chrome google-chrome-stable

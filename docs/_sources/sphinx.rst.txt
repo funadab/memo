@@ -1,2 +1,59 @@
-sphinx install
-================
+sphinxのインストール
+====================================
+
+-------------------------------
+html出力先の変更
+-------------------------------
+make htmlを実行した際に、出力ファイルがgitローカルリポジトリに出力されるように、
+Makefileを以下のように修正した。
+
+.. code-block:: bash
+ 
+ # You can set these variables from the command line.
+ SPHINXOPTS    =
+ SPHINXBUILD   = sphinx-build
+ SOURCEDIR     = source
+ BUILDDIR      = /home/funadab/memo/docs
+ 
+.. code-block:: bash
+
+ # Catch-all target: route all unknown targets to Sphinx using the new
+ # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
+ %: Makefile
+ 	@$(SPHINXBUILD) -b $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+-------------------------------
+拡張テーマの適用
+-------------------------------
+拡張テーマを適用するために、
+conf.pyを以下のように修正した。
+
+.. code-block:: bash
+
+ # import os
+ # import sys
+ # sys.path.insert(0, os.path.abspath('.'))
+ import sphinx_rtd_theme
+
+
+.. code-block:: bash
+
+ # The theme to use for HTML and HTML Help pages.  See the documentation for
+ # a list of builtin themes.
+ #
+ html_theme = 'sphinx_rtd_theme'
+
+
+-------------------------------
+GitHubPageへのアップロード
+-------------------------------
+
+GitHubPageへアップロードするために、
+conf.pyを以下のように修正した。
+
+.. code-block:: bash
+
+ extensions = [
+         'sphinx.ext.githubpages',
+ ]
+

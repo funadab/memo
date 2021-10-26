@@ -11,6 +11,11 @@ Welcome to memo's documentation!
    :caption: Contents:
 
    sphinx
+   step1
+   step2
+   step4
+   step5
+   environment
 
 Indices and tables
 ==================
