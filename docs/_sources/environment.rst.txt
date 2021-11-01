@@ -21,3 +21,9 @@ Chromeのインストール
 .. code-block:: bash
 
  sudo yum install --enablerepo=google-chrome google-chrome-stable
+
+
+------------------------------------------
+Intellijのインストール
+-----------------------------------------
+https://pleiades.io/help/idea/installation-guide.html#toolbox
