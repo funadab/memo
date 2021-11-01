@@ -90,6 +90,59 @@
 </pre></div>
 </div>
 <p><a class="reference external" href="https://pleiades.io/help/idea/installation-guide.html#toolbox">https://pleiades.io/help/idea/installation-guide.html#toolbox</a></p>
+<p>mavenのDLページから、tar.gzのバイナリのDLURLをコピーし、wgetした。
+wget <a class="reference external" href="https://dlcdn.apache.org/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.tar.gz">https://dlcdn.apache.org/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.tar.gz</a></p>
+<p>解凍して、/opt/に配置した。
+配置したapache-maven-3.8.3にapache-mavenのシンボリックリンクを貼った。
+sudo ln -s /opt/apache-maven-3.8.3 apache-maven</p>
+<p>.bash_profileにMVN_HOMEを追加し、 PATHにMVN_HOME/binを追加した。
+MVN_HOME=/opt/apache-maven
+PATH=$MVN_HOME/bin:$PATH:$HOME/.local/bin:$HOME/bin</p>
+<p>sourceコマンドで.bash_profileをリロードした。
+source .bash_profile
+mvn --version</p>
+<p><a class="reference external" href="https://weblabo.oscasierra.net/installing-tomcat9-centos7-1/">https://weblabo.oscasierra.net/installing-tomcat9-centos7-1/</a>
+<a class="reference external" href="https://qiita.com/hiren/items/2a4f1b55c99ebfb3fd08">https://qiita.com/hiren/items/2a4f1b55c99ebfb3fd08</a></p>
+<p>バージョンが古かったため、公式からDLしてインストールする。
+yum info tomcat</p>
+<p>curl -O <a class="reference external" href="https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.54/bin/apache-tomcat-9.0.54.tar.gz">https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.54/bin/apache-tomcat-9.0.54.tar.gz</a></p>
+<p>tar -xzvf</p>
+<p>sudo mv apache-tomcat-9.0.54 /opt/</p>
+<p>sudo useradd -s /sbin/nologin tomcat</p>
+<p>sudo chown -R tomcat:tomcat /opt/apache-tomcat-9.0.54/</p>
+<p>sudo ln -s /opt/apache-tomcat-9.0.54/ /opt/apache-tomcat
+sudo chown -h tomcat:tomcat /opt/apache-tomcat</p>
+<p>sudo vi /usr/lib/systemd/system/tomcat.service</p>
+<p># Systemd unit file for default tomcat
+#
+# To create clones of this service:
+# DO NOTHING, use tomcat&#64;.service instead.</p>
+<p>[Unit]
+Description=Apache Tomcat Web Application Container
+After=syslog.target network.target</p>
+<p>[Service]
+Type=oneshot
+PIDFile=/opt/apache-tomcat/tomcat.pid
+RemainAfterExit=yes
+#EnvironmentFile=/etc/tomcat/tomcat.conf
+#Environment=&quot;NAME=&quot;
+#EnvironmentFile=-/etc/sysconfig/tomcat
+ExecStart=/opt/apache-tomcat/bin/startup.sh
+ExecStop=/opt/apache-tomcat/bin/shutdown.sh
+ExecReStart=/opt/apache-tomcat/bin/shutdown.sh;/opt/apache-tomcat/bin/startup.sh
+SuccessExitStatus=143
+User=tomcat
+Group=tomcat</p>
+<p>[Install]
+WantedBy=multi-user.target</p>
+<p>sudo systemctl enable tomcat.service</p>
+<p>sudo /opt/apache-tomcat/bin/version.sh</p>
+<p>sudo systemctl start tomcat</p>
+<p><a class="reference external" href="https://qiita.com/takuya0301/items/968cf97893abf6e140cd">https://qiita.com/takuya0301/items/968cf97893abf6e140cd</a></p>
+<p>実行構成の編集
+Tomcatサーバー→ローカル</p>
+<p>sudo chmod o+r /opt/apache-tomcat-9.0.54/conf/tomcat-users.xml
+sudo chmod o+w /opt/apache-tomcat-9.0.54/webapps/</p>
 </div>
 </div>
 
