@@ -17,7 +17,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="step2.html" />
+    <link rel="next" title="学習STEP2の実施" href="step2.html" />
     <link rel="prev" title="sphinxのインストール" href="sphinx.html" /> 
 </head>
 
@@ -39,9 +39,29 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="sphinx.html">sphinxのインストール</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">学習STEP1の実施</a></li>
-<li class="toctree-l1"><a class="reference internal" href="step4.html">学習STEP1の実施</a></li>
-<li class="toctree-l1"><a class="reference internal" href="step5.html">学習STEP1の実施</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">学習STEP1の実施</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">ドメイン層</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#domain-object">Domain Objectの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#repository">Repositoryの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#repositoryimpl">RepositoryImplの作成(インフラストラクチャ層)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#service">Serviceの作成</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">アプリケーション層</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#controller">Controllerの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#show-all-todo">Show all TODO実装</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#form">Formの作成</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Controllerの実装</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jsp">JSPの実装</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="step2.html">学習STEP2の実施</a></li>
+<li class="toctree-l1"><a class="reference internal" href="step4.html">学習STEP4の実施</a></li>
+<li class="toctree-l1"><a class="reference internal" href="step5.html">学習STEP5の実施</a></li>
 <li class="toctree-l1"><a class="reference internal" href="environment.html">もろもろ環境整備</a></li>
 </ul>
 
@@ -71,6 +91,76 @@
              
   <div class="section" id="step1">
 <h1>学習STEP1の実施<a class="headerlink" href="#step1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id1">
+<h2>ドメイン層<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="domain-object">
+<h3>Domain Objectの作成<a class="headerlink" href="#domain-object" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>todo/src/main/java/com.example/todo/domain/modelを右クリックし、Javaクラス「Todo」を作成した。
+Javaクラス「Todo」に教材の内容をコピペした。
+※教材にあったインターフェースの設定は方法がわからず未実施★</p>
+</div>
+<div class="section" id="repository">
+<h3>Repositoryの作成<a class="headerlink" href="#repository" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>todo/src/main/java/com.example/todo/domain/repositoryを右クリックし、パッケージ「todo」を作成した。
+todo/src/main/java/com.example/todo/domain/repository/todoを右クリックし、インターフェース「TodoRepository」を作成した。
+インターフェース「TodoRepository」に教材の内容をコピペした。</p>
+</div>
+<div class="section" id="repositoryimpl">
+<h3>RepositoryImplの作成(インフラストラクチャ層)<a class="headerlink" href="#repositoryimpl" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>todo/src/main/java/com.example/todo/domain/repositoryを右クリックし、Javaクラス「TodoRepositoryImpl」を作成した。
+インターフェース「TodoRepositoryImpl」に教材の内容をコピペした。
+※教材にあったインターフェースの設定は方法がわからず未実施★</p>
+</div>
+<div class="section" id="service">
+<h3>Serviceの作成<a class="headerlink" href="#service" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>todo/src/main/java/com.example/todo/domain/serviceを右クリックし、パッケージ「todo」を作成した。
+todo/src/main/java/com.example/todo/domain/service/todoを右クリックし、インターフェース「TodoService」を作成した。
+インターフェース「TodoService」に教材の内容をコピペした。</p>
+<p>todo/src/main/java/com.example/todo/domain/serviceを右クリックし、Javaクラス「TodoServiceImpl」を作成した。
+インターフェース「TodoServiceImpl」に教材の内容をコピペした。
+※教材にあったインターフェースの設定は方法がわからず未実施★</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>アプリケーション層<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="controller">
+<h3>Controllerの作成<a class="headerlink" href="#controller" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>todo/src/main/java/com.example.todoを右クリックし、パッケージ「app.todo」を作成した。
+todo/src/main/java/com.example.todo/app/todoを右クリックし、Javaクラス「TodoController」を作成した。
+Javaクラス「TodoController」に教材の内容をコピペした。</p>
+</div>
+<div class="section" id="show-all-todo">
+<h3>Show all TODO実装<a class="headerlink" href="#show-all-todo" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="form">
+<h4>Formの作成<a class="headerlink" href="#form" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>todo/src/main/java/com.example.todo/app/todoを右クリックし、Javaクラス「TodoForm」を作成した。
+Javaクラス「TodoForm」に教材の内容をコピペした。
+※教材にあったインターフェースの設定は方法がわからず未実施★</p>
+</div>
+<div class="section" id="id3">
+<h4>Controllerの実装<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Javaクラス「TodoController」に教材の内容をコピペした。</p>
+</div>
+<div class="section" id="jsp">
+<h4>JSPの実装<a class="headerlink" href="#jsp" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>todo/src/main/webapp/WEB-INF/viewsを右クリックし、ディレクトリ「todo」を作成した。
+todo/src/main/webapp/WEB-INF/views/todoを右クリックし、JSPファイル「list」を作成した。
+JSPファイル「list」に教材の内容をコピペした。</p>
+<p>・新規Javaクラスの作成方法
+右クリック
+→新規
+→Javaクラス
+→「クラス」を選択して、名前を入力する。</p>
+<p>・新規Javaインターフェースの作成方法
+右クリック
+→新規
+→Javaクラス
+→「インターフェース」を選択して、名前を入力する。</p>
+<p>・ほげほげImplとは
+・インターフェースとは</p>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -78,7 +168,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="sphinx.html" class="btn btn-neutral float-left" title="sphinxのインストール" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="step2.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="step2.html" class="btn btn-neutral float-right" title="学習STEP2の実施" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
