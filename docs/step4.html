@@ -40,8 +40,21 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="sphinx.html">sphinxのインストール</a></li>
 <li class="toctree-l1"><a class="reference internal" href="step1.html">学習STEP1の実施</a></li>
+<li class="toctree-l1"><a class="reference internal" href="step1.html#http-terasolunaorg-github-io-guideline-5-7-0-release-ja-tutorial-tutorialtodo-html">http://terasolunaorg.github.io/guideline/5.7.0.RELEASE/ja/Tutorial/TutorialTodo.html</a></li>
+<li class="toctree-l1"><a class="reference internal" href="step1.html#id1">ドメイン層</a></li>
 <li class="toctree-l1"><a class="reference internal" href="step2.html">学習STEP2の実施</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">学習STEP4の実施</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">学習STEP4の実施</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#aws-ecsspring">AWS ECS上に構築するSpringアプリケーション</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#https-news-mynavi-jp-itsearch-article-devsoft-4354">https://news.mynavi.jp/itsearch/article/devsoft/4354</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#https-news-mynavi-jp-itsearch-article-devsoft-4359">https://news.mynavi.jp/itsearch/article/devsoft/4359</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#https-news-mynavi-jp-itsearch-article-devsoft-4390">https://news.mynavi.jp/itsearch/article/devsoft/4390</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aws-ecsspring-5">AWS ECS上に構築するSpringアプリケーション(5)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aws-ecsspring-6">AWS ECS上に構築するSpringアプリケーション(6)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aws-ecsspring-7">AWS ECS上に構築するSpringアプリケーション(7)</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="step5.html">学習STEP5の実施</a></li>
 <li class="toctree-l1"><a class="reference internal" href="environment.html">もろもろ環境整備</a></li>
 </ul>
@@ -72,6 +85,150 @@
              
   <div class="section" id="step4">
 <h1>学習STEP4の実施<a class="headerlink" href="#step4" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="aws-ecsspring">
+<h2>AWS ECS上に構築するSpringアプリケーション<a class="headerlink" href="#aws-ecsspring" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="https-news-mynavi-jp-itsearch-article-devsoft-4354">
+<h3><a class="reference external" href="https://news.mynavi.jp/itsearch/article/devsoft/4354">https://news.mynavi.jp/itsearch/article/devsoft/4354</a><a class="headerlink" href="#https-news-mynavi-jp-itsearch-article-devsoft-4354" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">・VPCは既存のものを流用した。</div>
+<div class="line">・インターネットGWは既存のものを流用した。</div>
+<div class="line">・パブリックとプライベートで2点ずつ別のAZに、計4点のサブネットを作成した。</div>
+<div class="line">・パブリックサブネットに既存のパブリックサブネット用ルートテーブルをアタッチした</div>
+</div>
+</div>
+<div class="section" id="https-news-mynavi-jp-itsearch-article-devsoft-4359">
+<h3><a class="reference external" href="https://news.mynavi.jp/itsearch/article/devsoft/4359">https://news.mynavi.jp/itsearch/article/devsoft/4359</a><a class="headerlink" href="#https-news-mynavi-jp-itsearch-article-devsoft-4359" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">・資料通りに実施した。</div>
+<div class="line">・パスベースルーティングのIFは暫定で&quot;/&quot;を設定した。</div>
+<div class="line">・GitHubから資材をgit cloneした。</div>
+<div class="line">★アノテーション全般がわからない</div>
+<div class="line">&#64;ComponentScan、&#64;Configuration、&#64;Autowired、&#64;Controller、&#64;RequestMapping、&#64;ConfigurationProperties</div>
+</div>
+<div class="line-block">
+<div class="line">★org.springframework.web.client.RestOperations</div>
+<div class="line">　→・RestTemplateのインターフェース</div>
+<div class="line">　　・Backendサービスを呼び出している</div>
+</div>
+</div>
+<div class="section" id="https-news-mynavi-jp-itsearch-article-devsoft-4390">
+<h3><a class="reference external" href="https://news.mynavi.jp/itsearch/article/devsoft/4390">https://news.mynavi.jp/itsearch/article/devsoft/4390</a><a class="headerlink" href="#https-news-mynavi-jp-itsearch-article-devsoft-4390" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">・docekrをインストールした。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>centos@ip-XXXX-XXX-XXX-XXX ~<span class="o">]</span>$ sudo yum update -y
+// omit
+<span class="o">[</span>centos@ip-XXX-XXX-XXX-XXX ~<span class="o">]</span>$ sudo yum install -y docker
+// omit
+<span class="o">[</span>centos@ip-XXX-XXX-XXX-XXX ~<span class="o">]</span>$ sudo systemctl <span class="nb">enable</span> docker.service
+Created symlink from /etc/systemd/system/multi-user.target.wants/docker.serv    ice to /usr/ lib/systemd/system/docker.service.
+<span class="o">[</span>centos@ip-XXX-XXX-XXX-XXX ~<span class="o">]</span>$ sudo systemctl start docker.service
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">・docker buildコマンドを発行すると「yum install」の箇所でエラーとなり、Dockerイメージの作成が失敗した。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>TEC<span class="se">\f</span>unadab@a-163tfnnkqtun2 mynavi-sample-aws-ecs<span class="o">]</span>$ sudo docker build backend/ -t funadab/mynavi-sample-ecs-backend:latest
+Sending build context to Docker daemon  <span class="m">86</span>.53kB
+Step <span class="m">1</span>/13 : FROM centos:centos7
+ ---&gt; eeb6ee3f44bd
+Step <span class="m">2</span>/13 : MAINTAINER funadab
+ ---&gt; Using cache
+ ---&gt; 55a84b2bce30
+Step <span class="m">3</span>/13 : RUN yum install -y        java-1.8.0-openjdk        java-1.8.0-openjdk-devel        wget tar iproute git
+ ---&gt; Running in 6f4576084e22
+Loaded plugins: fastestmirror, ovl
+Determining fastest mirrors
+Could not retrieve mirrorlist http://mirrorlist.centos.org/?release<span class="o">=</span><span class="m">7</span><span class="p">&amp;</span><span class="nv">arch</span><span class="o">=</span>x86_64<span class="p">&amp;</span><span class="nv">repo</span><span class="o">=</span>os<span class="p">&amp;</span><span class="nv">infra</span><span class="o">=</span>container error was
+<span class="m">12</span>: Timeout on http://mirrorlist.centos.org/?release<span class="o">=</span><span class="m">7</span><span class="p">&amp;</span><span class="nv">arch</span><span class="o">=</span>x86_64<span class="p">&amp;</span><span class="nv">repo</span><span class="o">=</span>os<span class="p">&amp;</span><span class="nv">infra</span><span class="o">=</span>container: <span class="o">(</span><span class="m">28</span>, <span class="s1">&#39;Resolving timed out after 30541 milliseconds&#39;</span><span class="o">)</span>
+
+
+ One of the configured repositories failed <span class="o">(</span>Unknown<span class="o">)</span>,
+ and yum doesn<span class="s1">&#39;t have enough cached data to continue. At this point the only</span>
+<span class="s1"> safe thing yum can do is fail. There are a few ways to work &quot;fix&quot; this:</span>
+
+<span class="s1">     1. Contact the upstream for the repository and get them to fix the problem.</span>
+
+<span class="s1">     2. Reconfigure the baseurl/etc. for the repository, to point to a working</span>
+<span class="s1">        upstream. This is most often useful if you are using a newer</span>
+<span class="s1">        distribution release than is supported by the repository (and the</span>
+<span class="s1">        packages for the previous distribution release still work).</span>
+
+<span class="s1">     3. Run the command with the repository temporarily disabled</span>
+<span class="s1">            yum --disablerepo=&lt;repoid&gt; ...</span>
+
+<span class="s1">     4. Disable the repository permanently, so yum won&#39;</span>t use it by default. Yum
+        will <span class="k">then</span> just ignore the repository <span class="k">until</span> you permanently <span class="nb">enable</span> it
+        again or use --enablerepo <span class="k">for</span> temporary usage:
+
+            yum-config-manager --disable &lt;repoid&gt;
+        or
+            subscription-manager repos --disable<span class="o">=</span>&lt;repoid&gt;
+
+     <span class="m">5</span>. Configure the failing repository to be skipped, <span class="k">if</span> it is unavailable.
+        Note that yum will try to contact the repo. when it runs most commands,
+        so will have to try and fail each <span class="nb">time</span> <span class="o">(</span>and thus. yum will be be much
+        slower<span class="o">)</span>. If it is a very temporary problem though, this is often a nice
+        compromise:
+
+            yum-config-manager --save --setopt<span class="o">=</span>&lt;repoid&gt;.skip_if_unavailable<span class="o">=</span><span class="nb">true</span>
+
+Cannot find a valid baseurl <span class="k">for</span> repo: base/7/x86_64
+The <span class="nb">command</span> <span class="s1">&#39;/bin/sh -c yum install -y        java-1.8.0-openjdk        java-1.8.0-openjdk-devel        wget tar iproute git&#39;</span> returned a non-zero code: <span class="m">1</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">→</div>
+<div class="line">以下手順①②を実施することで解決した。</div>
+<div class="line">①/usr/lib/systemd/system/docker.serviceを以下のように修正する。</div>
+<div class="line">修正前）ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock $OPTIONS $DOCKER_STORAGE_OPTIONS $DOCKER_ADD_RUNTIMES</div>
+<div class="line">修正後）ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock $OPTIONS $DOCKER_STORAGE_OPTIONS $DOCKER_ADD_RUNTIMES --dns=8.8.8.8</div>
+</div>
+<div class="line-block">
+<div class="line">②以下コマンドを発行する。</div>
+<div class="line">systemctl daemon-reload</div>
+<div class="line">systemctl restart docker</div>
+</div>
+<div class="line-block">
+<div class="line">・docker pushが拒否された。</div>
+<div class="line">imageのユーザ名とdocker hubアカウント名は同じにする必要があったため、揃えることで解決した。</div>
+<div class="line"><a class="reference external" href="https://qiita.com/shundayo/items/4ae35930fe9f85f535b0">https://qiita.com/shundayo/items/4ae35930fe9f85f535b0</a></div>
+</div>
+</div>
+<div class="section" id="aws-ecsspring-5">
+<h3>AWS ECS上に構築するSpringアプリケーション(5)<a class="headerlink" href="#aws-ecsspring-5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">・パブリックIPの自動割り当ては「無効」にした</div>
+<div class="line">→後工程で「有効」に設定変更した</div>
+<div class="line">・コンテナインスタンスIAMロール？</div>
+<div class="line">コントロールプレーンとなるEC2インスタンスに設定されるIAMロールであり、AmazonEC2ContainerServiceforEC2Roleポリシーが付与されたIAMロール。</div>
+</div>
+</div>
+<div class="section" id="aws-ecsspring-6">
+<h3>AWS ECS上に構築するSpringアプリケーション(6)<a class="headerlink" href="#aws-ecsspring-6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">・タスクロール？</div>
+<div class="line">ECS上で動くAPに付与するIAMロール。</div>
+</div>
+<div class="line-block">
+<div class="line">・タスク実行ロール？</div>
+<div class="line">ECS上で動くタスクに付与するIAMロール。</div>
+</div>
+</div>
+<div class="section" id="aws-ecsspring-7">
+<h3>AWS ECS上に構築するSpringアプリケーション(7)<a class="headerlink" href="#aws-ecsspring-7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">・AmazonECSServiceRolePolicyをアタッチしたロールの作成をしようとしたところ、「このポリシーはサービスにリンクされていて、そのサービス用のサービスにリンクされたロールでのみ使用されます。このポリシーのアタッチ、デタッチ、変更、または削除はできません」とエラーが表示されたため、既存のロール「」を利用した。</div>
+<div class="line">・クラスタ/サービスを作成したが、タスクが起動されない</div>
+<div class="line">→ECSインスタンスが起動されていないことが原因。</div>
+<div class="line">→クラスタ作成時に「パブリックIPの児童割り当て」を無効にしていたことが原因。有効にしたところ事象が解消した。</div>
+<div class="line">・ブラウザでAPの動作確認を行った際に、BFFからバックエンドへの遷移でエラーが発生した。（Whitelabel Error Page）</div>
+<div class="line">→application.yml内のservice配下のdnsにて定義されているALB名を修正した。</div>
+<div class="line">・修正、コミット、プッシュしてdocker buildしたが、docker imagesが更新されない。</div>
+<div class="line">→--no-cacheオプションをつけてビルドしたところ、事象が解消した。</div>
+</div>
+</div>
+</div>
 </div>
 
 

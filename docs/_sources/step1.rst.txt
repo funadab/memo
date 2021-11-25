@@ -1,6 +1,6 @@
 学習STEP1の実施
 ===================
-
+http://terasolunaorg.github.io/guideline/5.7.0.RELEASE/ja/Tutorial/TutorialTodo.html
 ============================================
 ドメイン層
 ============================================
@@ -76,10 +76,150 @@ todo/src/main/webapp/WEB-INF/views/todoを右クリックし、JSPファイル�
 JSPファイル「list」に教材の内容をコピペした。
 
 
+---------------------------------------------------------
+Create TODO実装
+---------------------------------------------------------
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Controllerの修正
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Javaクラス「TodoController」に教材の内容をコピペした。
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Formの作成
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Javaクラス「TodoForm」に教材の内容をコピペした。
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+JSPの修正
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+JSPファイル「list」に教材の内容をコピペした。
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+メッセージ表示のカスタマイズ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+JSPファイル「list」に教材の内容をコピペした。
+
+---------------------------------------------------------
+Finish TODO実装
+---------------------------------------------------------
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Formの修正
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Javaクラス「TodoForm」に教材の内容をコピペした。
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Controllerの修正
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Javaクラス「TodoController」に教材の内容をコピペした。
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+JSPの修正
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+JSPファイル「list」に教材の内容をコピペした。
+
+---------------------------------------------------------
+Delete TODO実装
+---------------------------------------------------------
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Formの修正
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Javaクラス「TodoForm」に教材の内容をコピペした。
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Controllerの修正
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Javaクラス「TodoController」に教材の内容をコピペした。
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+JSPの修正
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+JSPファイル「list」に教材の内容をコピペした。
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CSSの修正
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/main/webapp/resources/app/css配下の「styles.css」に教材の内容をコピペした。
+★CSS適用されなかった、後回し
+
+
+============================================
+インフラストラクチャ層
+============================================
+
+--------------------------------------------
+MyBatis3
+--------------------------------------------
+memo:todo_mybatis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+準備
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+MyBatis3用のブランクプロジェクトを作成した。
+TodoRepositoryImpl以外に修正を加えた以下ファイルをMyBatis3用のプロジェクトをコピペした。
+todo/src/main/java/com.example/todo/app/todo/TodoController
+todo/src/main/java/com.example/todo/app/todo/TodoForm
+todo/src/main/java/com.example/todo/domain/model/Todo
+todo/src/main/java/com.example/todo/domain/repository/TodoRepository
+todo/src/main/java/com.example/todo/service/todo/TodoService
+todo/src/main/java/com.example/todo/service/todo/TodoServiceImpl
+src/main/webapp/resources/app/css/styles.css
+src/main/webapp/WEB-INF/views/todo/list.jsp
+
+src/main/resources/META-INF/spring/todo-infra.propertiesに教材の内容をコピペした。
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+インフラストラクチャ層
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mapperファイルの作成
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+todo/src/main/resourcesで右クリックし、ディレクトリ「com/example/todo/domain/repository/todo」を作成した。
+todo/src/main/resources/com/example/todo/domain/repository/todoを右クリックし、ファイル「TodoRepository.xml」を作成した。
 
 
 
+--------------------------------------------
+Spring Data JPA
+--------------------------------------------
+memo:todo_JPA
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+準備
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Spring Data JPA用のブランクプロジェクトを作成した。
+TodoRepositoryImpl以外に修正を加えた以下ファイルをMyBatis3用のプロジェクトをコピペした。
+todo/src/main/java/com.example/todo/app/todo/TodoController
+todo/src/main/java/com.example/todo/app/todo/TodoForm
+todo/src/main/java/com.example/todo/domain/model/Todo
+todo/src/main/java/com.example/todo/service/todo/TodoService
+todo/src/main/java/com.example/todo/service/todo/TodoServiceImpl
+src/main/webapp/resources/app/css/styles.css
+src/main/webapp/WEB-INF/views/todo/list.jsp
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Entityの修正
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Javaクラス「Todo」に教材の内容をコピペした。
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TodoRepositoryの作成
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+todo/src/main/java/com.example/todo/domain/repository/todoを右クリックし、インターフェース「TodoRepository」を作成した。
+インターフェース「TodoRepository」に教材の内容をコピペした。
+★実行したが、以下のエラーが出力されてビルドが失敗した。
+
+/home/funadab/todo_JPA/todo/src/main/java/com/example/todo/domain/service/todo/TodoServiceImpl.java:53:23
+java: シンボルを見つけられません
+  シンボル:   メソッド create(com.example.todo.domain.model.Todo)
+  場所: タイプcom.example.todo.domain.repository.todo.TodoRepositoryの変数 todoRepository
+
+/home/funadab/todo_JPA/todo/src/main/java/com/example/todo/domain/service/todo/TodoServiceImpl.java:72:23
+java: シンボルを見つけられません
+  シンボル:   メソッド update(com.example.todo.domain.model.Todo)
+  場所: タイプcom.example.todo.domain.repository.todo.TodoRepositoryの変数 todoRepository
 
 
 ・新規Javaクラスの作成方法

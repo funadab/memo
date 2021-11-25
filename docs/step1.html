@@ -39,24 +39,26 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="sphinx.html">sphinxのインストール</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">学習STEP1の実施</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">ドメイン層</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#domain-object">Domain Objectの作成</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#repository">Repositoryの作成</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#repositoryimpl">RepositoryImplの作成(インフラストラクチャ層)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#service">Serviceの作成</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">学習STEP1の実施</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#http-terasolunaorg-github-io-guideline-5-7-0-release-ja-tutorial-tutorialtodo-html">http://terasolunaorg.github.io/guideline/5.7.0.RELEASE/ja/Tutorial/TutorialTodo.html</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id1">ドメイン層</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#domain-object">Domain Objectの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#repository">Repositoryの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#repositoryimpl">RepositoryImplの作成(インフラストラクチャ層)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#service">Serviceの作成</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">アプリケーション層</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">アプリケーション層</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#controller">Controllerの作成</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#show-all-todo">Show all TODO実装</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#form">Formの作成</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3">Controllerの実装</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#jsp">JSPの実装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#controller">Controllerの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#show-all-todo">Show all TODO実装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-todo">Create TODO実装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finish-todo">Finish TODO実装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-todo">Delete TODO実装</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">インフラストラクチャ層</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#mybatis3">MyBatis3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spring-data-jpa">Spring Data JPA</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="step2.html">学習STEP2の実施</a></li>
@@ -91,61 +93,123 @@
              
   <div class="section" id="step1">
 <h1>学習STEP1の実施<a class="headerlink" href="#step1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+</div>
+<div class="section" id="http-terasolunaorg-github-io-guideline-5-7-0-release-ja-tutorial-tutorialtodo-html">
+<h1><a class="reference external" href="http://terasolunaorg.github.io/guideline/5.7.0.RELEASE/ja/Tutorial/TutorialTodo.html">http://terasolunaorg.github.io/guideline/5.7.0.RELEASE/ja/Tutorial/TutorialTodo.html</a><a class="headerlink" href="#http-terasolunaorg-github-io-guideline-5-7-0-release-ja-tutorial-tutorialtodo-html" title="このヘッドラインへのパーマリンク">¶</a></h1>
+</div>
 <div class="section" id="id1">
-<h2>ドメイン層<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h1>ドメイン層<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="domain-object">
-<h3>Domain Objectの作成<a class="headerlink" href="#domain-object" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h2>Domain Objectの作成<a class="headerlink" href="#domain-object" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>todo/src/main/java/com.example/todo/domain/modelを右クリックし、Javaクラス「Todo」を作成した。
 Javaクラス「Todo」に教材の内容をコピペした。
 ※教材にあったインターフェースの設定は方法がわからず未実施★</p>
 </div>
 <div class="section" id="repository">
-<h3>Repositoryの作成<a class="headerlink" href="#repository" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h2>Repositoryの作成<a class="headerlink" href="#repository" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>todo/src/main/java/com.example/todo/domain/repositoryを右クリックし、パッケージ「todo」を作成した。
 todo/src/main/java/com.example/todo/domain/repository/todoを右クリックし、インターフェース「TodoRepository」を作成した。
 インターフェース「TodoRepository」に教材の内容をコピペした。</p>
 </div>
 <div class="section" id="repositoryimpl">
-<h3>RepositoryImplの作成(インフラストラクチャ層)<a class="headerlink" href="#repositoryimpl" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h2>RepositoryImplの作成(インフラストラクチャ層)<a class="headerlink" href="#repositoryimpl" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>todo/src/main/java/com.example/todo/domain/repositoryを右クリックし、Javaクラス「TodoRepositoryImpl」を作成した。
 インターフェース「TodoRepositoryImpl」に教材の内容をコピペした。
 ※教材にあったインターフェースの設定は方法がわからず未実施★</p>
 </div>
 <div class="section" id="service">
-<h3>Serviceの作成<a class="headerlink" href="#service" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h2>Serviceの作成<a class="headerlink" href="#service" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>todo/src/main/java/com.example/todo/domain/serviceを右クリックし、パッケージ「todo」を作成した。
 todo/src/main/java/com.example/todo/domain/service/todoを右クリックし、インターフェース「TodoService」を作成した。
 インターフェース「TodoService」に教材の内容をコピペした。</p>
 <p>todo/src/main/java/com.example/todo/domain/serviceを右クリックし、Javaクラス「TodoServiceImpl」を作成した。
 インターフェース「TodoServiceImpl」に教材の内容をコピペした。
 ※教材にあったインターフェースの設定は方法がわからず未実施★</p>
-</div>
-</div>
 <div class="section" id="id2">
-<h2>アプリケーション層<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h3>アプリケーション層<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
+</div>
+</div>
 <div class="section" id="controller">
-<h3>Controllerの作成<a class="headerlink" href="#controller" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h2>Controllerの作成<a class="headerlink" href="#controller" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>todo/src/main/java/com.example.todoを右クリックし、パッケージ「app.todo」を作成した。
 todo/src/main/java/com.example.todo/app/todoを右クリックし、Javaクラス「TodoController」を作成した。
 Javaクラス「TodoController」に教材の内容をコピペした。</p>
 </div>
 <div class="section" id="show-all-todo">
-<h3>Show all TODO実装<a class="headerlink" href="#show-all-todo" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<div class="section" id="form">
-<h4>Formの作成<a class="headerlink" href="#form" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h2>Show all TODO実装<a class="headerlink" href="#show-all-todo" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>todo/src/main/java/com.example.todo/app/todoを右クリックし、Javaクラス「TodoForm」を作成した。
 Javaクラス「TodoForm」に教材の内容をコピペした。
 ※教材にあったインターフェースの設定は方法がわからず未実施★</p>
-</div>
-<div class="section" id="id3">
-<h4>Controllerの実装<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>Javaクラス「TodoController」に教材の内容をコピペした。</p>
-</div>
-<div class="section" id="jsp">
-<h4>JSPの実装<a class="headerlink" href="#jsp" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>todo/src/main/webapp/WEB-INF/viewsを右クリックし、ディレクトリ「todo」を作成した。
 todo/src/main/webapp/WEB-INF/views/todoを右クリックし、JSPファイル「list」を作成した。
 JSPファイル「list」に教材の内容をコピペした。</p>
+</div>
+<div class="section" id="create-todo">
+<h2>Create TODO実装<a class="headerlink" href="#create-todo" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Javaクラス「TodoController」に教材の内容をコピペした。</p>
+<p>Javaクラス「TodoForm」に教材の内容をコピペした。</p>
+<p>JSPファイル「list」に教材の内容をコピペした。</p>
+<p>JSPファイル「list」に教材の内容をコピペした。</p>
+</div>
+<div class="section" id="finish-todo">
+<h2>Finish TODO実装<a class="headerlink" href="#finish-todo" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Javaクラス「TodoForm」に教材の内容をコピペした。</p>
+<p>Javaクラス「TodoController」に教材の内容をコピペした。</p>
+<p>JSPファイル「list」に教材の内容をコピペした。</p>
+</div>
+<div class="section" id="delete-todo">
+<h2>Delete TODO実装<a class="headerlink" href="#delete-todo" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Javaクラス「TodoForm」に教材の内容をコピペした。</p>
+<p>Javaクラス「TodoController」に教材の内容をコピペした。</p>
+<p>JSPファイル「list」に教材の内容をコピペした。</p>
+<p>src/main/webapp/resources/app/css配下の「styles.css」に教材の内容をコピペした。
+★CSS適用されなかった、後回し</p>
+<div class="section" id="id3">
+<h3>インフラストラクチャ層<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+</div>
+</div>
+<div class="section" id="mybatis3">
+<h2>MyBatis3<a class="headerlink" href="#mybatis3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>MyBatis3用のブランクプロジェクトを作成した。
+TodoRepositoryImpl以外に修正を加えた以下ファイルをMyBatis3用のプロジェクトをコピペした。
+todo/src/main/java/com.example/todo/app/todo/TodoController
+todo/src/main/java/com.example/todo/app/todo/TodoForm
+todo/src/main/java/com.example/todo/domain/model/Todo
+todo/src/main/java/com.example/todo/domain/repository/TodoRepository
+todo/src/main/java/com.example/todo/service/todo/TodoService
+todo/src/main/java/com.example/todo/service/todo/TodoServiceImpl
+src/main/webapp/resources/app/css/styles.css
+src/main/webapp/WEB-INF/views/todo/list.jsp</p>
+<p>src/main/resources/META-INF/spring/todo-infra.propertiesに教材の内容をコピペした。</p>
+<p>todo/src/main/resourcesで右クリックし、ディレクトリ「com/example/todo/domain/repository/todo」を作成した。
+todo/src/main/resources/com/example/todo/domain/repository/todoを右クリックし、ファイル「TodoRepository.xml」を作成した。</p>
+</div>
+<div class="section" id="spring-data-jpa">
+<h2>Spring Data JPA<a class="headerlink" href="#spring-data-jpa" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Spring Data JPA用のブランクプロジェクトを作成した。
+TodoRepositoryImpl以外に修正を加えた以下ファイルをMyBatis3用のプロジェクトをコピペした。
+todo/src/main/java/com.example/todo/app/todo/TodoController
+todo/src/main/java/com.example/todo/app/todo/TodoForm
+todo/src/main/java/com.example/todo/domain/model/Todo
+todo/src/main/java/com.example/todo/service/todo/TodoService
+todo/src/main/java/com.example/todo/service/todo/TodoServiceImpl
+src/main/webapp/resources/app/css/styles.css
+src/main/webapp/WEB-INF/views/todo/list.jsp</p>
+<p>Javaクラス「Todo」に教材の内容をコピペした。</p>
+<p>todo/src/main/java/com.example/todo/domain/repository/todoを右クリックし、インターフェース「TodoRepository」を作成した。
+インターフェース「TodoRepository」に教材の内容をコピペした。
+★実行したが、以下のエラーが出力されてビルドが失敗した。</p>
+<p>/home/funadab/todo_JPA/todo/src/main/java/com/example/todo/domain/service/todo/TodoServiceImpl.java:53:23
+java: シンボルを見つけられません</p>
+<blockquote>
+<div>シンボル:   メソッド create(com.example.todo.domain.model.Todo)
+場所: タイプcom.example.todo.domain.repository.todo.TodoRepositoryの変数 todoRepository</div></blockquote>
+<p>/home/funadab/todo_JPA/todo/src/main/java/com/example/todo/domain/service/todo/TodoServiceImpl.java:72:23
+java: シンボルを見つけられません</p>
+<blockquote>
+<div>シンボル:   メソッド update(com.example.todo.domain.model.Todo)
+場所: タイプcom.example.todo.domain.repository.todo.TodoRepositoryの変数 todoRepository</div></blockquote>
 <p>・新規Javaクラスの作成方法
 右クリック
 →新規
@@ -158,8 +222,6 @@ JSPファイル「list」に教材の内容をコピペした。</p>
 →「インターフェース」を選択して、名前を入力する。</p>
 <p>・ほげほげImplとは
 ・インターフェースとは</p>
-</div>
-</div>
 </div>
 </div>
 
